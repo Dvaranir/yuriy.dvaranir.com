@@ -1,0 +1,75 @@
+@import "@/styles/core/index.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 85px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 585px;
+}
+
+.heading {
+  font-size: $font-giant;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+  color: $grey;
+}
+
+.images-container {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    background-image: url(/assets/images/square-dots.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 13rem;
+    right: 1rem;
+  }
+}
+
+.animation-container {
+  max-width: 457px;
+  width: 100%;
+  height: auto;
+  margin-bottom: -20px;
+}
+
+.activity {
+  &-container {
+    display: flex;
+    gap: 10px;
+    border: 1px solid $grey;
+    padding: 0.4rem;
+    padding-bottom: 0.33rem;
+    max-width: 90%;
+    min-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-icon {
+    min-width: 1rem;
+    height: 1rem;
+    background-color: $primary;
+  }
+
+  &-text {
+    color: $grey;
+  }
+
+  &-name {
+    display: flex;
+    align-items: center;
+  }
+}

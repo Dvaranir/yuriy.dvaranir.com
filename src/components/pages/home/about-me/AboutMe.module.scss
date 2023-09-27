@@ -1,0 +1,40 @@
+@import "@/styles/core/index.scss";
+
+.section-container {
+  margin-bottom: 112px;
+}
+
+.heading {
+  &-line {
+    max-width: 326px;
+    width: 100%;
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 69px;
+    }
+  }
+}
+
+.text-photo-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+}
+
+.text {
+  &-container {
+    max-width: 515px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.animation-container {
+  margin-top: -191px;
+}

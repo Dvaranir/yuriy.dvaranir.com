@@ -1,0 +1,12 @@
+@import "@/styles/core/index.scss";
+
+.container {
+    max-width: 150px;
+
+    h3,
+    p {
+    padding: 0.5rem;
+
+    @include add-border;
+    }
+}

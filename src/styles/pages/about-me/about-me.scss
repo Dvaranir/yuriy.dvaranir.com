@@ -1,0 +1,11 @@
+// Core styles
+//@import "./styles/core/normalize.scss";
+@import "../../src/styles/core/reset.scss";
+@import "../../src/styles/core/fonts.scss";
+@import "../../src/styles/core/mixins.scss";
+@import "../../src/styles/core/variables.scss";
+
+// Components styles
+@import "../../src/styles/core/index.scss";
+
+@import "../../src/styles/style.scss";

@@ -1,0 +1,18 @@
+@import "@/styles/core/index.scss";
+
+.button{
+    width: fit-content;
+    padding: 0.5em 0.7em 0.4em 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px $primary solid;
+    color: inherit;
+    transition: background-color .2s ease;
+
+    &:hover{
+        background-color: rgba($primary, 0.3);
+        cursor: pointer;
+    }
+}

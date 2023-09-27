@@ -1,0 +1,66 @@
+@import "@/styles/core/index.scss";
+
+.section-container {
+  margin-bottom: 131px;
+}
+
+.heading-line-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 45px;
+}
+
+.heading {
+  &-line {
+    max-width: 127px;
+    width: 100%;
+  }
+}
+
+.text-contacts-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  &-container {
+    max-width: 505px;
+    width: 100%;
+  }
+}
+
+.contacts {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 1rem;
+
+    @include add-border;
+  }
+
+  &-heading {
+    margin-bottom: 1rem;
+  }
+
+  &-link {
+    &:hover .contacts__contacts-contact-text {
+      color: $white;
+    }
+  }
+
+  &-link-image {
+    width: 30px;
+    height: auto;
+  }
+
+  &-contact {
+    display: flex;
+    align-items: center;
+    &-text {
+      transition: color 0.2s ease;
+    }
+  }
+}

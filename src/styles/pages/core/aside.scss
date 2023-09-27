@@ -1,0 +1,37 @@
+.aside{
+    &__container{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        grid-row: 1/-1;
+        gap: 14px;
+
+        @media only screen and (max-width: 900px) {
+            display: none;
+            
+        }
+    }
+
+    &__line{
+        height: 191px;
+        width: 1px;
+        background-color: $grey;
+        margin: 0 auto;
+    }
+
+    &__links-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__link-container{}
+
+    &__link{}
+
+    &__image{
+        max-width: 21px;
+        height: auto;
+    }
+
+}

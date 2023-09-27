@@ -1,0 +1,56 @@
+@import "@/styles/core/reset.scss";
+@import "@/styles/core/index.scss";
+@import "@/styles/pages/core/index.scss";
+
+body {
+    background-color: $dark-gray;
+    color: $white;
+    font-size: clamp($font-small,3vw,$font-normal) ;
+    font-family: 'Fira Code';
+    font-weight: 500;
+}
+
+p, span {
+    font-weight: 400;
+    color: $grey;
+}
+
+h2 {
+    font-size: $font-giant;
+}
+
+.flow-container {
+    max-width: $desktop-xl;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: minmax(auto, 125px) minmax(auto, 46px) 1fr minmax(auto, 46px) minmax(auto, 125px);
+    min-height: 100vh;
+    height: auto;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    grid-column: 3;
+}
+
+.primary-color{
+    color: $primary;
+}
+
+.line{
+    height: 1px;
+    background-color: $primary;
+}
+
+.small-logo-image{
+    width: 1.2rem;
+    height: auto;
+}
+
+.block-heading{
+    margin-bottom: 50px;
+}
+

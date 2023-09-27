@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "latest",
+    "prop-types": "^15.8.1",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
-    "@types/react-dom": "latest"
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-lottie": "^1.2.7",
+    "sass": "^1.68.0",
+    "typescript": "latest"
   }
 }

@@ -1,95 +1,101 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import AboutMe from "@/components/pages/home/about-me/AboutMe";
+import WhoAmI from "@/components/pages/home/who-am-i/WhoAmI";
+import Quotation from "@/components/pages/home/quotation/Quotation";
+
+import Projects from "@/components/pages/home/projects/Projects";
+import Skills from "@/components/pages/home/skills/Skills";
+import Contacts from "@/components/pages/home/contacts/Contacts";
+
+import { IProjectProps } from "@/components/pages/home/projects/project.interfaces";
+import { ISkillProps } from "@/components/pages/home/skills/skill.interfaces";
+import { ISquareContactProps } from "@/components/pages-parts/square-contacts/square-contacts.interfaces";
 
 export default function Home() {
+  const dummyProjects: IProjectProps[] = [
+    {
+      liveLink: "#",
+      gitLink: "#",
+      image: "/assets/images/article-example-photo.jpg",
+      technologies: "HTML SCSS Python Flask",
+      projectName: "ChertNodes",
+      projectAbout: "Minecraft servers hosting",
+    },
+    {
+      liveLink: "#",
+      gitLink: "#",
+      image: "/assets/images/article-example-photo.jpg",
+      technologies: "HTML SCSS Python Flask",
+      projectName: "ChertNodes",
+      projectAbout: "Minecraft servers hosting",
+    },
+    {
+      liveLink: "#",
+      gitLink: "#",
+      image: "/assets/images/article-example-photo.jpg",
+      technologies: "HTML SCSS Python Flask",
+      projectName: "ChertNodes",
+      projectAbout: "Minecraft servers hosting",
+    },
+  ];
+
+  const dummySkills: ISkillProps[] = [
+    {
+      heading: "Languages",
+      technologies: "Python C# TypeScript JavaScript Bash",
+    },
+    {
+      heading: "Databases",
+      technologies: "MySQL PostgreSQL SQLite",
+    },
+    {
+      heading: "Tools",
+      technologies: "Linux SSH Git Webpack Gulp Vite Figma Docker",
+    },
+    {
+      heading: "Frameworks",
+      technologies: "Django .Net React.js Scrapy",
+    },
+    {
+      heading: "Other",
+      technologies: "HTML CSS SCSS LESS Rest",
+    },
+  ];
+
+  const dummyContacts: ISquareContactProps[] = [
+    {
+      href: "tel:87770164685",
+      image: "/assets/images/phone-icon.png",
+      imageAlt: "Discord Icon",
+      text: "Phone",
+    },
+    {
+      href: "https://telegram.me/dvaranir",
+      image: "/assets/images/logo-telegram.png",
+      imageAlt: "Telegram Icon",
+      text: "Telegram",
+    },
+    {
+      href: "https://api.whatsapp.com/send?phone=77770164685",
+      image: "/assets/images/logo-whatsapp.png",
+      imageAlt: "WhatsApp Icon",
+      text: "WhatsApp",
+    },
+    {
+      href: "https://www.linkedin.com/in/yuriy-plakhin/",
+      image: "/assets/images/logo-linkedin-black.png",
+      imageAlt: "Linkedin Icon",
+      text: "Linkedin",
+    },
+  ];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <>
+      <WhoAmI />
+      <Quotation />
+      <Projects projectsList={dummyProjects} />
+      <Skills skillsList={dummySkills} />
+      <AboutMe />
+      <Contacts squareContactsList={dummyContacts} />
+    </>
+  );
 }

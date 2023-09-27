@@ -1,0 +1,30 @@
+@import "@/styles/core/index.scss";
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  margin-bottom: 112px;
+}
+
+.heading {
+  font-size: $font-giant;
+  &-container {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  &-line {
+    max-width: 240px;
+    width: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

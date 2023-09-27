@@ -1,0 +1,11 @@
+// Components styles
+@import "../../src/styles/core/index.scss";
+@import "../../src/styles/style.scss";
+
+@import "./completed-apps.scss";
+@import "./small-projects.scss";
+
+
+.projects-heading{
+    margin-bottom: 50px;
+}
