@@ -6,7 +6,7 @@ import { IProjectProps } from "./project.interfaces";
 
 import styles from "./Projects.module.scss";
 
-function Projects(props: { projectsList: IProjectProps[] }) {
+function Projects(props: { projectsList: IProjectProps[], projects_button: string, projects_heading: string }) {
   const { projectsList } = props;
 
   return (
@@ -15,11 +15,11 @@ function Projects(props: { projectsList: IProjectProps[] }) {
         <div className={styles["heading-line-container"]}>
           <h2 className={styles["heading"]}>
             <span className={`${styles["heading-cage"]} primary-color`}>#</span>
-            projects
+            {props.projects_heading}
           </h2>
           <div className={styles["heading-line line"]}></div>
         </div>
-        <DefaultButton content="View all ~~&gt;" href="#" link={true} />
+        <DefaultButton content={props.projects_button} href="/projects" link={true} />
       </div>
       <div className={styles["projects-container"]}>
         {projectsList.map((project, i) => (

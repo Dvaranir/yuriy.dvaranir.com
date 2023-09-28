@@ -15,7 +15,7 @@ export default function Skills(props: { skillsList: ISkillProps[] }) {
           <span className={`${styles["heading-cage"]} primary-color`}>
             #
           </span>
-          skills
+          {props.skills_heading}
         </h2>
         <div className={styles["heading-line line"]}></div>
       </div>

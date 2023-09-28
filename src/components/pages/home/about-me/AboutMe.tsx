@@ -4,37 +4,26 @@ import Lottie from "react-lottie";
 
 import DefaultButton from "@/components/ui/default-button/DefaultButton";
 
-import { GenLottieOptions } from "@/scripts/functions";
+import { GenLottieOptions } from "@/utils/functions";
 
 import styles from "./AboutMe.module.scss";
 
-function AboutMe() {
+function AboutMe(props) {
   return (
     <section className={styles["section-container"]}>
       <div className={styles["heading-line-container"]}>
         <h2 className={styles["heading"]}>
           <span className={`${styles["heading-cage"]} primary-color`}>#</span>
-          about-me
+          {props.about_me_heading}
         </h2>
         <div className={`${styles["heading-line"]} line`}></div>
       </div>
       <div className={styles["text-photo-container"]}>
-        <div className={styles["text-container"]}>
-          <p className={styles["text"]}>Hello, i’m Elias!</p>
-          <p className={styles["text"]}>
-            I’m a self-taught front-end developer based in Kyiv, Ukraine. I can
-            develop responsive websites from scratch and raise them into modern
-            user-friendly web experiences.
-          </p>
-          <p className={styles["text"]}>
-            Transforming my creativity and knowledge into a websites has been my
-            passion for over a year. I have been helping various clients to
-            establish their presence online. I always strive to learn about the
-            newest technologies and frameworks.
-          </p>
+        <div className={styles["text-container"]} >
+          <div className={styles["text-container"]} dangerouslySetInnerHTML={{ __html: props?.about_me_paragraph }}></div>
           <DefaultButton
             additionalClass={styles["button"]}
-            content="Read more -&gt;"
+            content={props?.about_me_button}
           />
         </div>
         <div id="animation-container" className={styles["animation-container"]}>

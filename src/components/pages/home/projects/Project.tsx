@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { NoComponentIfUndefined } from "@/scripts/functions";
+import { NoComponentIfUndefined } from "@/utils/functions";
 import DefaultButton from "@/components/ui/default-button/DefaultButton";
 import { IProjectProps } from "./project.interfaces";
 import styles from "./Project.module.scss";

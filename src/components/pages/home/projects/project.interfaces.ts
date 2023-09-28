@@ -5,4 +5,4 @@ export interface IProjectProps {
     technologies: string,
     projectName: string,
     projectAbout: string,
-  }
+}

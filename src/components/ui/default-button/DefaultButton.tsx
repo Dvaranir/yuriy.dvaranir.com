@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./DefaultButton.module.scss";
 import Link from "next/link";
 
-import { EmptyIfUndefined } from "@/scripts/functions";
+import { EmptyIfUndefined } from "@/utils/functions";
 
 import { IDefaultButtonProps } from "./default-button.interfaces";
 
