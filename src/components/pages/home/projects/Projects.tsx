@@ -2,12 +2,13 @@ import React from "react";
 import DefaultButton from "@/components/ui/default-button/DefaultButton";
 
 import Project from "./Project";
-import { IProjectProps } from "./project.interfaces";
 
 import styles from "./Projects.module.scss";
+import { IMainPage } from "@/app/main-page.interfaces";
 
-function Projects(props: { projectsList: IProjectProps[], projects_button: string, projects_heading: string }) {
-  const { projectsList } = props;
+function Projects(props: IMainPage) {
+  console.log(props);
+  
 
   return (
     <section className={styles["section-container"]}>
@@ -22,8 +23,8 @@ function Projects(props: { projectsList: IProjectProps[], projects_button: strin
         <DefaultButton content={props.projects_button} href="/projects" link={true} />
       </div>
       <div className={styles["projects-container"]}>
-        {projectsList.map((project, i) => (
-          <Project key={`proj${i}`} project={project} />
+        {props.projects.data.map(project => (
+          <Project key={`proj${project.id}`} project={project} />
         ))}
       </div>
     </section>

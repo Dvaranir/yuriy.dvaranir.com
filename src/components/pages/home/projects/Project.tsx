@@ -1,13 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import { NoComponentIfUndefined } from "@/utils/functions";
-import DefaultButton from "@/components/ui/default-button/DefaultButton";
-import { IProjectProps } from "./project.interfaces";
+import { IProject } from "./project.interfaces";
 import styles from "./Project.module.scss";
+import { useApiAsset } from "@/utils/hooks";
+import Technologies from "@/components/reusable/Technologies";
+import ProjectLinks from "@/components/ui/project-links/ProjectLinks";
 
-export default function Project(props: { project: IProjectProps }) {
-  const { projectName, technologies, projectAbout, image, liveLink, gitLink } =
-    props.project;
+export default function Project(props: IProject) {
+  const { code_url, description, live_url, name, technologies, images} = props.project.attributes;
+
+  // Get the first image
+  const image = images.data[0].attributes.url
 
   return (
     <article className={styles["container"]}>
@@ -16,32 +19,17 @@ export default function Project(props: { project: IProjectProps }) {
           className={styles["image"]}
           width={200}
           height={200}
-          src={image}
+          src={useApiAsset(image)}
           alt=""
         />
       </div>
-      <p className={styles["technologies-paragraph"]}>{technologies}</p>
+      <p className={styles["technologies-paragraph"]}>
+        <Technologies {...technologies} />
+      </p>
       <div className={styles["about-container"]}>
-        <h3 className={styles["about-heading"]}>{projectName}</h3>
-        <p className={styles["about-paragraph"]}>{projectAbout}</p>
-        <div className={styles["about-buttons-container"]}>
-          {NoComponentIfUndefined(
-            liveLink,
-            <DefaultButton
-              href={liveLink}
-              additionalClass={styles["about-button"]}
-              content="Live &lt;~&gt;"
-            />
-          )}
-          {NoComponentIfUndefined(
-            gitLink,
-            <DefaultButton
-              href={gitLink}
-              additionalClass={styles["project-about-button"]}
-              content="Git &gt;"
-            />
-          )}
-        </div>
+        <h3 className={styles["about-heading"]}>{name}</h3>
+        <p className={styles["about-paragraph"]}>{description}</p>
+        <ProjectLinks liveLink={live_url} githubLink={code_url} />
       </div>
     </article>
   );

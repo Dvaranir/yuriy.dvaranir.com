@@ -6,7 +6,7 @@ import { ISkillProps } from "./skill.interfaces";
 import styles from "./Skills.module.scss";
 
 export default function Skills(props: { skillsList: ISkillProps[] }) {
-  const { skillsList } = props;
+  const skills = props.skills.data;
 
   return (
     <section className={styles["section-container"]}>
@@ -20,7 +20,7 @@ export default function Skills(props: { skillsList: ISkillProps[] }) {
         <div className={styles["heading-line line"]}></div>
       </div>
       <div className={styles.container}>
-        {skillsList.map((skill, i) => (
+        {skills.map((skill, i) => (
           <Skill key={`skil${i}`} skill={skill} />
         ))}
       </div>

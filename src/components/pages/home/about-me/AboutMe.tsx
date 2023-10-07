@@ -5,10 +5,13 @@ import Lottie from "react-lottie";
 import DefaultButton from "@/components/ui/default-button/DefaultButton";
 
 import { GenLottieOptions } from "@/utils/functions";
+import { useApiAsset } from "@/utils/hooks";
 
 import styles from "./AboutMe.module.scss";
 
 function AboutMe(props) {
+  const animation = useApiAsset(props.about_me_animation.data.attributes.url)
+  
   return (
     <section className={styles["section-container"]}>
       <div className={styles["heading-line-container"]}>
@@ -28,7 +31,7 @@ function AboutMe(props) {
         </div>
         <div id="animation-container" className={styles["animation-container"]}>
           {/* @ts-ignore */}
-          <Lottie options={GenLottieOptions("../assets/animations/programmer_zen.json")} />
+          <Lottie options={GenLottieOptions(animation)} />
         </div>
       </div>
     </section>

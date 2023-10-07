@@ -8,14 +8,14 @@ import styles from "./ProjectLinks.module.scss";
 function ProjectLinks({ liveLink, githubLink }: IProjectLinksProps) {
   return (
     <div className={styles.container}>
-      {NoComponentIfUndefined(
-        liveLink,
-        <DefaultButton href={liveLink} content="Live &lt;~&gt;" />
-      )}
-      {NoComponentIfUndefined(
-        githubLink,
-        <DefaultButton href={githubLink} content="Git &gt;=" />
-      )}
+      { liveLink
+        ? <DefaultButton href={liveLink} content="Live &lt;~&gt;" />
+        : <></>
+      }
+      { githubLink
+        ? <DefaultButton href={githubLink} content="Git &gt;=" />
+        : <></>
+      }
     </div>
   );
 }
